@@ -14,11 +14,8 @@ This project implements a **secure authentication system** using Next.js, Node.j
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB (Mongoose ORM)
 - **Authentication:** JWT, Bcrypt
-- **Email Service:** Nodemailer
+- **Email Service:** Nodemailer and Mailtrap
 
-## 📸 **Screenshots**
-![Login Page](./screenshots/login.png)
-![Email Verification](./screenshots/verify-email.png)
 
 ## 🏗 **Installation & Setup**
 1. **Clone the repository:**
