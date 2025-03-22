@@ -22,17 +22,16 @@ This project implements a **secure authentication system** using Next.js, Node.j
    ```sh
    git clone https://github.com/yourusername/nextjs-auth.git
    cd nextjs-auth
-Install dependencies:
 
-2. **Install dependencies**
-  npm install
+2.  **Install dependencies** <br>
+     npm install
 
-3. **Content of .env file**
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-EMAIL_USER=your_smtp_user
-EMAIL_PASS=your_smtp_pass
+3. **Content of .env file** <br>
+MONGODB_URI=your_mongodb_connection_string  <br>
+JWT_SECRET=your_jwt_secret  <br>
+EMAIL_USER=your_smtp_user  <br>
+EMAIL_PASS=your_smtp_pass  <br>
 
-4. **Run the server**
-npm run dev
+4. **Run the server** <br>
+npm run dev  <br>
 Navigate to http://localhost:3000
