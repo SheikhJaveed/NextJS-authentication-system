@@ -35,29 +35,41 @@ export const sendEmail = async ({email,emailType,userId}:any)=>{
         const mailOptions = {
             from: 'me@gmail.com',
             to: email,
-            subject: emailType === "VERIFY" 
-                ? "Verify your email" 
-                : emailType === "RESET" 
-                    ? "Reset your password" 
-                    : "Forgot your password", 
-            html: `<p>
-                        Click <a href="http://localhost:3000/${emailType === "VERIFY" 
-                            ? "verifyemail" 
-                            : emailType === "RESET" 
-                                ? "resetpassword" 
-                                : "forgotpassword"}?token=${hashedToken}">here</a> to ${emailType === "VERIFY" 
-                                                                                                        ? "verify your email" 
-                                                                                                        : emailType === "RESET" 
-                                                                                                            ? "reset your password" 
-                                                                                                            : "recover your account"}
-                        or copy and paste the link below in your browser. <br> 
-                        http://localhost:3000/${emailType === "VERIFY" 
-                            ? "verifyemail" 
-                            : emailType === "RESET" 
-                                ? "resetpassword" 
-                                : "forgotpassword"}?token=${hashedToken}
-                    </p>`
+            subject: emailType === "VERIFY"
+                ? "Verify your email"
+                : emailType === "RESET"
+                    ? "Reset your password"
+                    : "Forgot your password",
+            html: `
+                <p>
+                    Click 
+                    <a href="http://localhost:3000/${
+                        emailType === "VERIFY"
+                            ? "verifyemail"
+                            : emailType === "RESET"
+                                ? "resetpassword"
+                                : "forgotpassword"
+                    }?token=${hashedToken}">here</a> 
+                    to ${
+                        emailType === "VERIFY"
+                            ? "verify your email"
+                            : emailType === "RESET"
+                                ? "reset your password"
+                                : "recover your account"
+                    }
+                    or copy and paste the link below in your browser. <br> 
+                    
+                    http://localhost:3000/${
+                        emailType === "VERIFY"
+                            ? "verifyemail"
+                            : emailType === "RESET"
+                                ? "resetpassword"
+                                : "forgotpassword"
+                    }?token=${hashedToken}
+                </p>
+            `,
         };
+        
 
         const mailResponse = await transport.sendMail(mailOptions);
         console.log("Email sent:",mailResponse.messageId);
